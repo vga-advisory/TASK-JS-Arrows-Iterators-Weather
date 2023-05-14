@@ -6,8 +6,12 @@
  ************************************/
 const logger = function (array) {
 
-};
+    array.foreach((element) => {
 
+        console.log(element)
+    });
+};
+ 
 /*************************************
  * toCelsius(temperatures)
  *
@@ -17,12 +21,18 @@ const logger = function (array) {
  *   in degrees Celsius
  *
  * The conversion is:
- *   C = (F - 32) * (5/9)
+ *   C = (F - 32) * (5/9) ===> x * y ===> n
  ************************************/
 const toCelsius = function (temperatures) {
+    const ans = temperatures.map(
+        (temp)=>{
+            return (temp-32) * (5/9)
+        }
+    )
 
+    return ans
 };
-
+console.log(toCelsius([212, 122]))
 /**************************************
  * hottestDays(temperatures, threshhold)
  *
